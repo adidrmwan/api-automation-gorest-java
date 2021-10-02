@@ -1,6 +1,8 @@
+@automated-api-gorest
 Feature: Validation of post method
 
-  @GetUserDetails
-  Scenario: Send a valid Request to get user details
-    Given I send a request to the URL to post new user
-    Then the response will return status 201
+  @PostNewUser @Post
+  Scenario: Send a valid Request to post new user
+    Given client send a request to the URL to post new user
+    Then response status should be 201
+    And response should have matching with request body

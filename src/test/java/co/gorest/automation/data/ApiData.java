@@ -5,11 +5,11 @@ import io.restassured.specification.RequestSpecification;
 
 public class ApiData {
     private static String contentType = "application/json";
-    private static String apiUrl;
-    private static Object body;
     private static RequestSpecification requestSpecification;
     private static Response response;
-    private static String name;
+    private static String firstName;
+    private static String lastName;
+    private static int idUser;
 
     public static String getContentType() {
         return contentType;
@@ -17,14 +17,6 @@ public class ApiData {
 
     public static void setContentType(String contentType) {
         ApiData.contentType = contentType;
-    }
-
-    public static String getApiUrl() {
-        return apiUrl;
-    }
-
-    public static void setApiUrl(String apiUrl) {
-        ApiData.apiUrl = apiUrl;
     }
 
     public static RequestSpecification getRequestSpecification() {
@@ -43,19 +35,27 @@ public class ApiData {
         ApiData.response = response;
     }
 
-    public static Object getBody() {
-        return body;
+    public static String getFirstName() {
+        return firstName;
     }
 
-    public static void setBody(Object body) {
-        ApiData.body = body;
+    public static void setFirstName(String firstName) {
+        ApiData.firstName = firstName;
     }
 
-    public static String getName() {
-        return name;
+    public static String getLastName() {
+        return lastName;
     }
 
-    public static void setName(String name) {
-        ApiData.name = name;
+    public static void setLastName(String lastName) {
+        ApiData.lastName = lastName;
+    }
+
+    public static int getIdUser() {
+        return idUser;
+    }
+
+    public static void setIdUser(int idUser) {
+        ApiData.idUser = idUser;
     }
 }

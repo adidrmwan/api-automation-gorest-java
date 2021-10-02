@@ -15,7 +15,7 @@ public class BaseSteps {
         requestSpecification = RestAssured.given()
                 .baseUri(dotenv.get("API_URL"))
                 .header("Content-Type", ApiData.getContentType())
-                .header("Authorization", "Bearer "+ dotenv.get("TOKEN"));
+                .header("Authorization", "Bearer " + dotenv.get("TOKEN"));
         ApiData.setRequestSpecification(requestSpecification);
     }
 
@@ -49,7 +49,7 @@ public class BaseSteps {
                 response = ApiData.getRequestSpecification().body(body).get(endpoint);
                 break;
             case "post":
-                response = ApiData.getRequestSpecification().body(body).log().all().post(endpoint);
+                response = ApiData.getRequestSpecification().body(body).post(endpoint);
                 break;
             case "put":
                 response = ApiData.getRequestSpecification().body(body).put(endpoint);
